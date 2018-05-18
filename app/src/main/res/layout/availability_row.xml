@@ -17,68 +17,68 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/Sunday"
+            android:id="@+id/monday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
             app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintEnd_toStartOf="@+id/Monday"
+            app:layout_constraintEnd_toStartOf="@+id/tuesday_image"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@color/colorAccent" />
 
         <ImageView
-            android:id="@+id/Monday"
+            android:id="@+id/tuesday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
-            app:layout_constraintEnd_toStartOf="@+id/Tuesday"
-            app:layout_constraintStart_toEndOf="@id/Sunday"
+            app:layout_constraintEnd_toStartOf="@+id/wednesday_image"
+            app:layout_constraintStart_toEndOf="@id/monday_image"
             app:srcCompat="@android:color/holo_green_dark" />
 
         <ImageView
-            android:id="@+id/Tuesday"
+            android:id="@+id/wednesday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
-            app:layout_constraintEnd_toStartOf="@+id/Wednesday"
-            app:layout_constraintStart_toEndOf="@id/Monday"
+            app:layout_constraintEnd_toStartOf="@+id/thursday_image"
+            app:layout_constraintStart_toEndOf="@id/tuesday_image"
             app:srcCompat="@android:color/holo_green_dark" />
 
         <ImageView
-            android:id="@+id/Wednesday"
+            android:id="@+id/thursday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
-            app:layout_constraintEnd_toStartOf="@+id/Thursday"
-            app:layout_constraintStart_toEndOf="@id/Tuesday"
+            app:layout_constraintEnd_toStartOf="@+id/friday_image"
+            app:layout_constraintStart_toEndOf="@id/wednesday_image"
             app:srcCompat="@android:color/holo_green_dark" />
 
         <ImageView
-            android:id="@+id/Thursday"
+            android:id="@+id/friday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
-            app:layout_constraintEnd_toStartOf="@+id/Friday"
-            app:layout_constraintStart_toEndOf="@id/Wednesday"
+            app:layout_constraintEnd_toStartOf="@+id/saturday_image"
+            app:layout_constraintStart_toEndOf="@id/thursday_image"
             app:srcCompat="@android:color/holo_green_dark" />
 
         <ImageView
-            android:id="@+id/Friday"
+            android:id="@+id/saturday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
-            app:layout_constraintEnd_toStartOf="@+id/Saturday"
-            app:layout_constraintStart_toEndOf="@id/Thursday"
+            app:layout_constraintEnd_toStartOf="@+id/sunday_image"
+            app:layout_constraintStart_toEndOf="@id/friday_image"
             app:srcCompat="@android:color/holo_green_dark" />
 
         <ImageView
-            android:id="@+id/Saturday"
+            android:id="@+id/sunday_image"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:contentDescription="@string/days_image_description"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/Friday"
+            app:layout_constraintStart_toEndOf="@+id/saturday_image"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@color/colorAccent" />
     </android.support.constraint.ConstraintLayout>
