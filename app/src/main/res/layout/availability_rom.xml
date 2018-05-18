@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        tools:text="Name" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/Sunday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/Monday"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/Monday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/Tuesday"
+            app:layout_constraintStart_toEndOf="@id/Sunday"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/Tuesday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/Wednesday"
+            app:layout_constraintStart_toEndOf="@id/Monday"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/Wednesday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/Thursday"
+            app:layout_constraintStart_toEndOf="@id/Tuesday"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/Thursday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/Friday"
+            app:layout_constraintStart_toEndOf="@id/Wednesday"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/Friday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/Saturday"
+            app:layout_constraintStart_toEndOf="@id/Thursday"
+            app:srcCompat="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/Saturday"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/days_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Friday"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/colorAccent" />
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

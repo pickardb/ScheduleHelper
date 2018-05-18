@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ScheduleHelper</string>
+    <string name="days_image_description">An Image to display availability on a given day</string>
+</resources>
