@@ -1,11 +1,14 @@
 package com.example.schedulehelper;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -38,13 +41,22 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference nameDatabase;
         System.out.println("Made reference");
         nameDatabase = FirebaseDatabase.getInstance().getReference();
-        employees.add(emp1);
+        /*employees.add(emp1);
         employees.add(emp2);
         employees.add(emp3);
-        WriteNewEmployee(nameDatabase, "firebaseUser", "1111000");
+        WriteNewEmployee(nameDatabase, "firebaseUser2", "1010101");*/
         final ArrayAdapter nameAdapter = new CustomAdapter(this, employees);
         ListView nameList =  findViewById(R.id.nameList);
         nameList.setAdapter(nameAdapter);
+
+        FloatingActionButton addEmployeeButton = (FloatingActionButton) findViewById(R.id.add_employee_button);
+        addEmployeeButton.setOnClickListener(new View.OnClickListener(){
+             @Override
+             public void onClick(View view) {
+                 Intent startIntent = new Intent(getApplicationContext(),AddEmployee.class);
+                 startActivity(startIntent);
+             }
+         });
 
        nameDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -76,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        String name = String.valueOf(adapterView.getItemAtPosition(i));
+                        String name = employees.get(i).getName();
                         Toast.makeText(MainActivity.this,name,Toast.LENGTH_LONG).show();
                     }
                 }
