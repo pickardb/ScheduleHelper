@@ -2,6 +2,7 @@ package com.example.schedulehelper;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,12 +10,24 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView nameList;
-    private ArrayList<String> names;
+    employee emp1 = new employee("emp1","0000001");
+    employee emp2 = new employee("emp2","0000010");
+    employee emp3 = new employee("emp3","0000011");
+    public ArrayList<employee> employees = new ArrayList<>();
+
+
+
 
 
     @Override
@@ -22,10 +35,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] NAMES = {"Test One", "Test Two", "Test Three"};
-        ListAdapter nameAdapter = new CustomAdapter(this, NAMES);
-        ListView nameList = (ListView) findViewById(R.id.nameList);
+        DatabaseReference nameDatabase;
+        System.out.println("Made reference");
+        nameDatabase = FirebaseDatabase.getInstance().getReference();
+        employees.add(emp1);
+        employees.add(emp2);
+        employees.add(emp3);
+        WriteNewEmployee(nameDatabase, "firebaseUser", "1111000");
+        final ArrayAdapter nameAdapter = new CustomAdapter(this, employees);
+        ListView nameList =  findViewById(R.id.nameList);
         nameList.setAdapter(nameAdapter);
+
+       nameDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot childSnapShot : dataSnapshot.child("Users").getChildren()){
+                    System.out.println("childSnapShot is: "+ childSnapShot);
+                    String name = (String) childSnapShot.child("name").getValue();
+
+                    System.out.println("name is: " + name);
+                    String availability = (String) childSnapShot.child("availability").getValue();
+                    System.out.println("availability is: " + availability);
+
+                    employee newEmp = new employee(name,availability);
+                    employees.add(newEmp);
+                    System.out.println("Added a new employee");
+                    nameAdapter.notifyDataSetChanged();
+                }
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getMessage());
+            }
+        });
+
 
         nameList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
@@ -36,7 +81,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    public void WriteNewEmployee (DatabaseReference nameReference, String userName, String availability ){
+        employee newUser;
+        String [] timeOffString = {"January 1", "January 2"};
+        newUser = new employee(userName,availability);
+        nameReference.child("Users").child(newUser.getName()).setValue(newUser);
+
     }
 
 
 }
+
