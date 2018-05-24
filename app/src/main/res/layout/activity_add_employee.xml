@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEmployee">
+
+    <EditText
+        android:id="@+id/new_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Type Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Mo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Mo"
+        android:textOn="Mo"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Tu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Tu"
+        android:textOn="Tu"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_Mo"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_We"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="We"
+        android:textOn="We"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_Tu"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Th"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Th"
+        android:textOn="Th"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_We"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Fr"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Fr"
+        android:textOn="Fr"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_Th"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Sa"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Sa"
+        android:textOn="Sa"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_Fr"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_Su"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Su"
+        android:textOn="Su"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton_Sa"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_text" />
+
+    <Button
+        android:id="@+id/button_CreateUser"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Create User"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton_Mo" />
+
+</android.support.constraint.ConstraintLayout>

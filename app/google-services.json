@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "910328683203",
+    "firebase_url": "https://schedulehelper-4bb63.firebaseio.com",
+    "project_id": "schedulehelper-4bb63",
+    "storage_bucket": "schedulehelper-4bb63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910328683203:android:b05ad8870d2037d3",
+        "android_client_info": {
+          "package_name": "com.example.schedulehelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910328683203-v3pu0qt7ljoghicsqov2nk8gqupvquoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.schedulehelper",
+            "certificate_hash": "32b5c460728f3e9dc23b291cb0471c2f73957400"
+          }
+        },
+        {
+          "client_id": "910328683203-gms90bfc9m7eg4jnssea6n5q29e2aqgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEHbnWB7yc8gXdBUsUB4I3LBp58m1Hf6A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910328683203-gms90bfc9m7eg4jnssea6n5q29e2aqgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
